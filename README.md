@@ -32,13 +32,17 @@ This project analyzes factors affecting student academic performance and builds 
 
 ## 📊 Data Science Workflow
 
+## 📊 Data Science Workflow
+
 ```mermaid
 flowchart TD
-    A[Load Dataset] --> B[Clean & Preprocess Data]
-    B --> C[EDA (Visualizations & Insights)]
+    A[Load Dataset] --> B[Cleaning & Preprocessing]
+    B --> C[Exploratory Data Analysis (EDA)]
     C --> D[Feature Engineering]
-    D --> E[Train Random Forest Classifier]
-    E --> F[Model Evaluation with Accuracy Score]
+    D --> E[Train ML Model - Random Forest]
+    E --> F[Evaluate Accuracy & Insights]
+
+
 
 🧩 Feature Engineering
 New Feature	Why it was created
