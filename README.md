@@ -1,75 +1,62 @@
-# 📊 Student Performance Analysis (EDA + Machine Learning)
-
-A complete **Data Science & Machine Learning project** analyzing the Student Performance dataset.  
-The goal is to explore factors affecting academic performance and build an ML model to **predict student performance levels**.
+<h1 align="center">📊 Student Performance Analysis (EDA + ML)</h1>
+<h3 align="center">A Complete End-to-End Data Science Project</h3>
 
 ---
 
-## 📁 Project Structure
+## 🚀 Project Overview  
+This project analyzes the **Student Performance dataset** to understand factors affecting academic scores and builds a **Machine Learning model** to predict performance levels (Low / Medium / High).
+
+---
+
+## 📂 Repository Structure
 
 | File | Description |
 |------|-------------|
-| `Student Performance Data Analysis.ipynb` | Full EDA + ML model + visualizations |
-| `StudentsPerformance.csv` | Dataset used in the project |
+| `Student Performance Data Analysis.ipynb` | Complete Python Notebook (EDA + ML + Visualizations) |
+| `StudentsPerformance.csv` | Original dataset used in this project |
 
 ---
 
-## ✅ Key Highlights
+## ✅ Key Steps Performed
 
-✔ Loaded & Cleaned dataset  
-✔ Feature Engineering (Created new feature: `average_score`)  
-✔ Visualized relationships using **Seaborn & Matplotlib**  
-✔ Built a **Random Forest Classifier** to predict performance levels  
-✔ Saved publication-ready visuals
+✔ Data cleaning & preprocessing  
+✔ Feature Engineering (`average_score`, performance segmentation)  
+✔ Data visualization (heatmaps, bar plots, scatter plots)  
+✔ Model building using **RandomForestClassifier**  
+✔ Evaluation using accuracy score  
 
 ---
 
-## 🔍 Insights from Data
+## 🔍 Insights From the Data
 
-- Female students performed slightly higher in reading & writing.
-- Standard lunch students scored higher than those with reduced lunch.
-- Completing test preparation course boosts scores significantly.
-- Parental education influences performance trend.
+- 💡 Students with **standard lunch** performed better than those with reduced lunch.
+- ✅ Completing **test preparation** improves scores significantly.
+- 👩‍🎓 Female students scored higher in *reading & writing*.
+- 🎓 Higher **parental education** correlates with better performance.
 
 ---
 
 ## 🤖 Machine Learning Model
 
-| Model Used | Random Forest Classifier |
-|------------|--------------------------|
-| Target | `performance_level` (Low / Medium / High) |
-| Accuracy | **~89%** after rounding |
-
-Key ML steps:
-- Train/Test split
-- Model training
-- Evaluation using accuracy score
+| Metric | Result |
+|--------|--------|
+| Model Used | **Random Forest Classifier** |
+| Target Variable | `performance_level` (Low / Medium / High) |
+| Accuracy | **~89%** ✅ |
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Languages & Libraries**
-- Python
-- Pandas
-- NumPy
-- Seaborn
-- Matplotlib
-- Scikit-Learn
+| Category | Tools Used |
+|----------|------------|
+| Languages | Python |
+| Libraries | Pandas, NumPy, Seaborn, Matplotlib, Scikit-Learn |
+| Model | Random Forest Classifier |
 
 ---
 
-## 📈 Visual Outputs Included
+## 📸 Visual Outputs
 
-- Distribution of scores  
-- Correlation heatmap  
-- Performance level prediction result
+All generated charts are saved automatically in:
 
-All visuals are generated and stored automatically inside `/visuals/`.
-
----
-
-## 🚀 How to Run
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
