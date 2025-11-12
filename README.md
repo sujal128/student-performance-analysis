@@ -36,12 +36,12 @@ This project analyzes factors affecting student academic performance and builds 
 
 ```mermaid
 flowchart TD
-    A[Load Dataset] --> B[Cleaning & Preprocessing]
-    B --> C[Exploratory Data Analysis (EDA)]
+    A[Import Dataset] --> B[Data Cleaning]
+    B --> C[Exploratory Data Analysis]
     C --> D[Feature Engineering]
-    D --> E[Train ML Model - Random Forest]
-    E --> F[Evaluate Accuracy & Insights]
-
+    D --> E[Model Building (Random Forest)]
+    E --> F[Evaluation & Accuracy Calculation]
+    F --> G[Insights & Conclusion]
 
 
 🧩 Feature Engineering
