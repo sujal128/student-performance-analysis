@@ -11,12 +11,12 @@
 
 ## 🧠 Project Summary
 
-The goal of this project is to analyze factors affecting student academic performance and build a Machine Learning model that predicts their **performance level (Low / Medium / High)** using subjects like Math, Reading & Writing.
+This project analyzes factors affecting student academic performance and builds a Machine Learning model that predicts **performance level (Low / Medium / High)** using scores from Math, Reading, and Writing.
 
-✅ Real education dataset (1000 students)  
+✅ Real dataset (1000 students)  
 ✅ Detailed Exploratory Data Analysis  
-✅ Feature engineering + ML model + visual insights  
-✅ Auto-generated charts stored in `/visuals/`
+✅ Feature engineering + ML model  
+✅ Visual insights stored automatically in `/visuals/`
 
 ---
 
@@ -24,9 +24,9 @@ The goal of this project is to analyze factors affecting student academic perfor
 
 📦 Student Performance Analysis
 │
-├── 📄 StudentsPerformance.csv → Dataset used
+├── 📄 StudentsPerformance.csv → Dataset
 ├── 📓 Student Performance Data Analysis.ipynb → Full EDA + ML Notebook
-└── 📊 visuals/ → All generated visualizations
+└── 📊 visuals/ → Saved visualization images
 
 yaml
 Copy code
@@ -38,13 +38,13 @@ Copy code
 ```mermaid
 flowchart TD
     A[Load Dataset] --> B[Clean & Preprocess Data]
-    B --> C[EDA (Visualization & Insights)]
+    B --> C[EDA (Visualizations & Insights)]
     C --> D[Feature Engineering]
     D --> E[Train Random Forest Classifier]
-    E --> F[Model Evaluation & Accuracy]
+    E --> F[Model Evaluation with Accuracy Score]
 🧩 Feature Engineering
 New Feature	Why it was created
-average_score	Captures combined performance across subjects
+average_score	Captures combined performance of all subjects
 performance_level	Converts marks into ML class labels (Low / Medium / High)
 
 python
@@ -52,9 +52,9 @@ Copy code
 df["average_score"] = (df.math_score + df.reading_score + df.writing_score) / 3
 🔍 Key Visual Insights
 ✅ Students who completed test preparation scored higher
-✅ Better parental education → higher probability of good performance
-✅ Reading & Writing scores are strongly correlated
-✅ Standard lunch students score better than reduced lunch
+✅ Better parental education leads to better performance
+✅ Reading & Writing have a strong correlation
+✅ Students with standard lunch scored better
 
 mermaid
 Copy code
@@ -64,11 +64,9 @@ Reading --> Writing
 Math --> Writing
 🤖 Machine Learning Model
 Parameter	Value
-Model	RandomForestClassifier
-Target Variable	performance_level
+Algorithm	RandomForestClassifier
+Target	performance_level
 Achieved Accuracy	~89%
-
-Model training:
 
 python
 Copy code
@@ -82,14 +80,14 @@ Libraries	Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn
 Platform	Jupyter Notebook / Google Colab
 
 ▶️ Run This Project Locally
-Clone this repository
+Clone the repository
 
-Install dependencies
+Install dependencies:
 
 bash
 Copy code
 pip install pandas numpy seaborn matplotlib scikit-learn
-Open notebook
+Open notebook:
 
 bash
 Copy code
@@ -97,24 +95,24 @@ jupyter notebook
 Run Student Performance Data Analysis.ipynb
 
 📈 Outputs Saved Automatically
-📁 /visuals/ folder contains:
+Folder /visuals/ contains:
 
-Histogram distributions
+Histograms
 
 Correlation heatmap
 
-Boxplots (gender & parental education)
+Boxplots (based on gender/parent education)
 
-Confusion matrix (ML results)
+Confusion matrix (ML model results)
 
 ✅ Conclusion
-This project demonstrates:
+This project shows how:
 
-How student performance is influenced by external factors
+Student performance is influenced by external & social factors
 
-How ML can classify performance categories
+Machine Learning can categorize student performance levels
 
-End-to-end DS pipeline from EDA → Feature Engineering → Classification Model
+Complete DS pipeline from EDA → Feature Engineering → ML Classification
 
 Data isn’t just numbers — it reveals patterns, decisions, and stories.
 
