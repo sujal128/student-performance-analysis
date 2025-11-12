@@ -28,9 +28,6 @@ This project analyzes factors affecting student academic performance and builds 
 ├── 📓 Student Performance Data Analysis.ipynb → Full EDA + ML Notebook
 └── 📊 visuals/ → Saved visualization images
 
-yaml
-Copy code
-
 ---
 
 ## 📊 Data Science Workflow
@@ -42,37 +39,35 @@ flowchart TD
     C --> D[Feature Engineering]
     D --> E[Train Random Forest Classifier]
     E --> F[Model Evaluation with Accuracy Score]
+
 🧩 Feature Engineering
 New Feature	Why it was created
 average_score	Captures combined performance of all subjects
 performance_level	Converts marks into ML class labels (Low / Medium / High)
 
-python
-Copy code
 df["average_score"] = (df.math_score + df.reading_score + df.writing_score) / 3
+
 🔍 Key Visual Insights
 ✅ Students who completed test preparation scored higher
 ✅ Better parental education leads to better performance
 ✅ Reading & Writing have a strong correlation
 ✅ Students with standard lunch scored better
 
-mermaid
-Copy code
 graph LR
 Math --> Reading
 Reading --> Writing
 Math --> Writing
+
 🤖 Machine Learning Model
 Parameter	Value
 Algorithm	RandomForestClassifier
 Target	performance_level
 Achieved Accuracy	~89%
 
-python
-Copy code
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 pred = model.predict(X_test)
+
 🔧 Tech Stack Used
 Category	Tools
 Languages	Python
@@ -83,15 +78,11 @@ Platform	Jupyter Notebook / Google Colab
 Clone the repository
 
 Install dependencies:
-
-bash
-Copy code
 pip install pandas numpy seaborn matplotlib scikit-learn
-Open notebook:
 
-bash
-Copy code
+Open notebook:
 jupyter notebook
+
 Run Student Performance Data Analysis.ipynb
 
 📈 Outputs Saved Automatically
