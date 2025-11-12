@@ -32,8 +32,6 @@ This project analyzes factors affecting student academic performance and builds 
 
 ## 📊 Data Science Workflow
 
-## 📊 Data Science Workflow
-
 
 ```mermaid
 flowchart TD
@@ -44,76 +42,124 @@ flowchart TD
     E --> F[Evaluate Model Accuracy]
 ```
 
+---
 
-🧩 Feature Engineering
-New Feature	Why it was created
-average_score	Captures combined performance of all subjects
-performance_level	Converts marks into ML class labels (Low / Medium / High)
+## 🧩 Feature Engineering (Turning raw data into intelligent features)
 
+We engineered new features to improve model performance.
+
+| New Feature          | Purpose |
+|---------------------|---------|
+| `average_score`     | Calculates combined academic score (Math + Reading + Writing). |
+| `performance_level` | Converts numeric scores into ML class labels (Low / Medium / High) for classification. |
+
+```python
 df["average_score"] = (df.math_score + df.reading_score + df.writing_score) / 3
+```
 
-🔍 Key Visual Insights
-✅ Students who completed test preparation scored higher
-✅ Better parental education leads to better performance
-✅ Reading & Writing have a strong correlation
-✅ Students with standard lunch scored better
+---
 
+## 🔍 Key Insights from Visualizations
+
+📌 Students who completed **test preparation** scored noticeably higher.  
+📌 Higher **parental education** → Better performance trend.  
+📌 **Reading & Writing scores are strongly correlated** (almost linear).  
+📌 Students with **standard lunch** outperformed reduced lunch students.
+
+### 📈 Score Correlation Flow
+
+```mermaid
 graph LR
-Math --> Reading
-Reading --> Writing
+Math[Math Score] --> Reading[Reading Score]
+Reading --> Writing[Writing Score]
 Math --> Writing
+```
 
-🤖 Machine Learning Model
-Parameter	Value
-Algorithm	RandomForestClassifier
-Target	performance_level
-Achieved Accuracy	~89%
+---
+
+## 🤖 Machine Learning Model (Predicting Performance Level)
+
+| Component  | Details |
+|------------|---------|
+| Algorithm  | `RandomForestClassifier` |
+| Target     | `performance_level` |
+| Accuracy   | **~89%** |
+
+```python
+from sklearn.ensemble import RandomForestClassifier
 
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
-pred = model.predict(X_test)
 
-🔧 Tech Stack Used
-Category	Tools
-Languages	Python
-Libraries	Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn
-Platform	Jupyter Notebook / Google Colab
+predictions = model.predict(X_test)
+```
 
-▶️ Run This Project Locally
-Clone the repository
+✅ Classification model successfully predicts student performance category.
+
+---
+
+## 🔧 Tech Stack Used
+
+| Category     | Tools / Technologies |
+|--------------|---------------------|
+| Languages    | Python |
+| Libraries    | Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn |
+| Platform     | Jupyter Notebook / Google Colab |
+
+---
+
+## ▶️ Run This Project Locally
+
+Clone the repo:
+
+```bash
+git clone https://github.com/sujal128/student-performance-analysis.git
+```
 
 Install dependencies:
+
+```bash
 pip install pandas numpy seaborn matplotlib scikit-learn
+```
 
-Open notebook:
+Open Notebook:
+
+```bash
 jupyter notebook
+```
 
-Run Student Performance Data Analysis.ipynb
+Run: **Student Performance Data Analysis.ipynb**
 
-📈 Outputs Saved Automatically
-Folder /visuals/ contains:
+---
 
-Histograms
+## 📈 Outputs Generated Automatically
 
-Correlation heatmap
+All visualizations are saved inside:
 
-Boxplots (based on gender/parent education)
+```
+/visuals/
+```
 
-Confusion matrix (ML model results)
+Generated plots include:
 
-✅ Conclusion
-This project shows how:
+- Score distribution histograms
+- Correlation heatmap
+- Gender / parental education boxplots
+- Confusion matrix of ML model predictions
 
-Student performance is influenced by external & social factors
+---
 
-Machine Learning can categorize student performance levels
+## ✅ Conclusion
 
-Complete DS pipeline from EDA → Feature Engineering → ML Classification
+This project demonstrates:
 
-Data isn’t just numbers — it reveals patterns, decisions, and stories.
+✔ How academic performance is influenced by **parental education, lunch type, and preparation habits**  
+✔ Full **Data Science workflow**: EDA → Feature Engineering → ML Modeling  
+✔ Machine Learning can **predict student performance levels** with high accuracy
 
-✨ Author
-Sujal Singh
-Data Science • Machine Learning • AI Projects
+> 🧠 *“Data transforms assumptions into insights — and insights into decisions.”*
+
+---
+
 
 <p align="center"> <a href="https://github.com/sujal128"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/sujal-singh-40657728b/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a> </p> <p align="center"><b>“Data transforms assumptions into insights.”</b></p> ```
