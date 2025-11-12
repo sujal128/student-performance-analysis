@@ -1,62 +1,51 @@
-<h1 align="center">📊 Student Performance Analysis (EDA + ML)</h1>
-<h3 align="center">A Complete End-to-End Data Science Project</h3>
+<h1 align="center">📊 Student Performance Analysis — EDA + Machine Learning</h1>
+<h4 align="center">End-to-End Data Science Pipeline | Classification Model | Insights + ML Explainability</h4>
 
 ---
 
-## 🚀 Project Overview  
-This project analyzes the **Student Performance dataset** to understand factors affecting academic scores and builds a **Machine Learning model** to predict performance levels (Low / Medium / High).
+## 📌 Objective
+
+This project performs **Exploratory Data Analysis (EDA)** and builds a **Machine Learning classification model** to predict student performance levels (Low / Medium / High) using demographic & academic factors.
+
+The workflow replicates a real industry DS pipeline:
+> Data → Preprocessing → Feature Engineering → Visualization → Modeling → Evaluation
 
 ---
 
-## 📂 Repository Structure
+## 🧠 Problem Statement
 
-| File | Description |
-|------|-------------|
-| `Student Performance Data Analysis.ipynb` | Complete Python Notebook (EDA + ML + Visualizations) |
-| `StudentsPerformance.csv` | Original dataset used in this project |
+> *“Can we predict a student’s academic performance level by examining factors such as gender, parental education, lunch type, and test preparation?”*
 
 ---
 
-## ✅ Key Steps Performed
+## ⚙️ End-to-End ML Pipeline
 
-✔ Data cleaning & preprocessing  
-✔ Feature Engineering (`average_score`, performance segmentation)  
-✔ Data visualization (heatmaps, bar plots, scatter plots)  
-✔ Model building using **RandomForestClassifier**  
-✔ Evaluation using accuracy score  
-
----
-
-## 🔍 Insights From the Data
-
-- 💡 Students with **standard lunch** performed better than those with reduced lunch.
-- ✅ Completing **test preparation** improves scores significantly.
-- 👩‍🎓 Female students scored higher in *reading & writing*.
-- 🎓 Higher **parental education** correlates with better performance.
-
----
-
-## 🤖 Machine Learning Model
-
-| Metric | Result |
-|--------|--------|
-| Model Used | **Random Forest Classifier** |
-| Target Variable | `performance_level` (Low / Medium / High) |
-| Accuracy | **~89%** ✅ |
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Tools Used |
-|----------|------------|
-| Languages | Python |
-| Libraries | Pandas, NumPy, Seaborn, Matplotlib, Scikit-Learn |
-| Model | Random Forest Classifier |
-
----
-
-## 📸 Visual Outputs
-
-All generated charts are saved automatically in:
-
+```text
+┌─────────────────────────┐
+│  Load Dataset (CSV)      │
+└───────────────┬─────────┘
+                ↓
+┌─────────────────────────┐
+│ Data Cleaning & Encoding │
+│ (Label Encoding + Mapping) │
+└───────────────┬─────────┘
+                ↓
+┌─────────────────────────┐
+│ Feature Engineering      │
+│ → average_score          │
+│ → performance_level      │
+└───────────────┬─────────┘
+                ↓
+┌─────────────────────────┐
+│ Exploratory Data Analysis│
+│ (Heatmap, Boxplots etc.) │
+└───────────────┬─────────┘
+                ↓
+┌─────────────────────────┐
+│ Model Training (RF)      │
+└───────────────┬─────────┘
+                ↓
+┌─────────────────────────┐
+│ Evaluation (Accuracy +   │
+│ Confusion Matrix + FI)   │
+└─────────────────────────┘
