@@ -1,11 +1,5 @@
-<h1 align="center">📊 Student Performance Analysis — End-to-End Data Science & Machine Learning Project</h1>
-<h3 align="center">EDA • Feature Engineering • ML Model • Insights Visualization</h3>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Random_Forest-228B22?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Jupyter_Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-</p>
+# 📊 Student Performance Analysis — End-to-End Data Science & Machine Learning Project
+### EDA • Feature Engineering • ML Model • Insights Visualization
 
 ---
 
@@ -13,25 +7,26 @@
 
 This project analyzes factors affecting student academic performance and builds a Machine Learning model that predicts **performance level (Low / Medium / High)** using scores from Math, Reading, and Writing.
 
-✅ Real dataset (1000 students)  
-✅ Detailed Exploratory Data Analysis  
-✅ Feature engineering + ML model  
-✅ Visual insights stored automatically in `/visuals/`
+- Real dataset (1000 students)  
+- Detailed Exploratory Data Analysis  
+- Feature engineering + ML model  
+- Visual insights saved automatically in `/visuals/`
 
 ---
 
 ## 📂 Repository Structure
 
-📦 Student Performance Analysis
+```
+Student Performance Analysis
 │
-├── 📄 StudentsPerformance.csv → Dataset
-├── 📓 Student Performance Data Analysis.ipynb → Full EDA + ML Notebook
-└── 📊 visuals/ → Saved visualization images
+├── StudentsPerformance.csv                 → Dataset
+├── Student Performance Data Analysis.ipynb → Full EDA + ML Notebook
+└── visuals/                                → Saved visualization images
+```
 
 ---
 
 ## 📊 Data Science Workflow
-
 
 ```mermaid
 flowchart TD
@@ -44,67 +39,51 @@ flowchart TD
 
 ---
 
-## 🧩 Feature Engineering (Turning raw data into intelligent features)
+## 🧩 Feature Engineering
 
-We engineered new features to improve model performance.
-
-| New Feature          | Purpose |
-|---------------------|---------|
-| `average_score`     | Calculates combined academic score (Math + Reading + Writing). |
-| `performance_level` | Converts numeric scores into ML class labels (Low / Medium / High) for classification. |
+| Feature            | Purpose |
+|--------------------|---------|
+| `average`          | Combined academic score (Math + Reading + Writing) |
+| `performance_level`| Converts average score into classes (Low/Medium/High) |
 
 ```python
-df["average_score"] = (df.math_score + df.reading_score + df.writing_score) / 3
+df["average"] = (df.math_score + df.reading_score + df.writing_score) / 3
 ```
 
 ---
 
-## 🔍 Key Insights from Visualizations
+## 🔍 Key Insights
 
-📌 Students who completed **test preparation** scored noticeably higher.  
-📌 Higher **parental education** → Better performance trend.  
-📌 **Reading & Writing scores are strongly correlated** (almost linear).  
-📌 Students with **standard lunch** outperformed reduced lunch students.
-
-### 📈 Score Correlation Flow
-
-```mermaid
-graph LR
-Math[Math Score] --> Reading[Reading Score]
-Reading --> Writing[Writing Score]
-Math --> Writing
-```
+- Students who completed **test preparation** scored higher  
+- Higher **parental education** → Better performance  
+- **Reading & Writing** scores are strongly correlated  
+- Students with **standard lunch** performed better  
 
 ---
 
-## 🤖 Machine Learning Model (Predicting Performance Level)
+## 🤖 Machine Learning Model
 
 | Component  | Details |
 |------------|---------|
-| Algorithm  | `RandomForestClassifier` |
-| Target     | `performance_level` |
-| Accuracy   | **~89%** |
+| Algorithm  | RandomForestClassifier |
+| Target     | performance_level |
+| Accuracy   | **~95%** |
 
 ```python
-from sklearn.ensemble import RandomForestClassifier
-
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
-
 predictions = model.predict(X_test)
 ```
 
-✅ Classification model successfully predicts student performance category.
-
 ---
 
-## 🔧 Tech Stack Used
+## 🔧 Tech Stack
 
-| Category     | Tools / Technologies |
-|--------------|---------------------|
-| Languages    | Python |
-| Libraries    | Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn |
-| Platform     | Jupyter Notebook / Google Colab |
+- Python  
+- Pandas, NumPy  
+- Matplotlib, Seaborn  
+- Scikit-Learn  
+- Jupyter Notebook / Google Colab
 
 ---
 
@@ -122,44 +101,46 @@ Install dependencies:
 pip install pandas numpy seaborn matplotlib scikit-learn
 ```
 
-Open Notebook:
+Run the notebook:
 
 ```bash
 jupyter notebook
 ```
 
-Run: **Student Performance Data Analysis.ipynb**
+Open: **Student Performance Data Analysis.ipynb**
 
 ---
 
-## 📈 Outputs Generated Automatically
+## 📈 Outputs Saved Automatically
 
-All visualizations are saved inside:
+All plots are saved in:
 
 ```
 /visuals/
 ```
 
-Generated plots include:
+Includes:
 
-- Score distribution histograms
-- Correlation heatmap
-- Gender / parental education boxplots
-- Confusion matrix of ML model predictions
+- Score distribution  
+- Parental education boxplot  
+- Correlation heatmap  
+- Gender-wise averages  
+- Confusion matrix  
+- Feature importance chart  
 
 ---
 
 ## ✅ Conclusion
 
-This project demonstrates:
+This project shows:
 
-✔ How academic performance is influenced by **parental education, lunch type, and preparation habits**  
-✔ Full **Data Science workflow**: EDA → Feature Engineering → ML Modeling  
-✔ Machine Learning can **predict student performance levels** with high accuracy
+- How performance is influenced by **parental education**, **lunch type**, and **test preparation**
+- Full Data Science pipeline: EDA → Feature Engineering → Modeling
+- ML model predicts student performance categories with **~95% accuracy**
 
-> 🧠 *“Data transforms assumptions into insights — and insights into decisions.”*
+> *“Data transforms assumptions into insights — and insights into decisions.”*
 
 ---
 
-
-<p align="center"> <a href="https://github.com/sujal128"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/sujal-singh-40657728b/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a> </p> <p align="center"><b>“Data transforms assumptions into insights.”</b></p> ```
+### GitHub: https://github.com/sujal128  
+### LinkedIn: https://www.linkedin.com/in/sujal-singh-40657728b/
