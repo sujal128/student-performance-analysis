@@ -1,16 +1,26 @@
-# 📊 Student Performance Analysis — End-to-End Data Science & Machine Learning Project
-### EDA • Feature Engineering • ML Model • Insights Visualization
+<h1 align="center">📊 Student Performance Analysis — End-to-End Data Science & Machine Learning Project</h1>
+<h3 align="center">Advanced EDA • Feature Engineering • ML Modeling • Insights Visualization</h3>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Random_Forest-228B22?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Jupyter_Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Data Science-4285F4?style=for-the-badge&logo=googleanalytics&logoColor=white"/>
+</p>
 
 ---
 
 ## 🧠 Project Summary
 
-This project analyzes factors affecting student academic performance and builds a Machine Learning model that predicts **performance level (Low / Medium / High)** using scores from Math, Reading, and Writing.
+A complete **end-to-end Data Science project** that analyzes factors influencing student academic performance and builds a machine learning classifier to predict **performance level (Low / Medium / High)**.
 
-- Real dataset (1000 students)  
-- Detailed Exploratory Data Analysis  
-- Feature engineering + ML model  
-- Visual insights saved automatically in `/visuals/`
+This project demonstrates:
+
+- Full **Data Science workflow**  
+- Professional **exploratory data analysis (EDA)**  
+- Custom **feature engineering**  
+- A tuned **Random Forest classifier (~95% accuracy)**  
+- Automated insights saved to `/visuals/`  
 
 ---
 
@@ -19,77 +29,95 @@ This project analyzes factors affecting student academic performance and builds 
 ```
 Student Performance Analysis
 │
-├── StudentsPerformance.csv                 → Dataset
-├── Student Performance Data Analysis.ipynb → Full EDA + ML Notebook
-└── visuals/                                → Saved visualization images
+├── StudentsPerformance.csv                     ← Dataset
+├── Student Performance Data Analysis.ipynb     ← EDA + ML Notebook
+└── visuals/                                    ← Saved plots & insights
 ```
 
 ---
 
-## 📊 Data Science Workflow
+## 📊 End-to-End Workflow
 
 ```mermaid
 flowchart TD
-    A[Load Dataset] --> B[Data Cleaning & Preprocessing]
+    A[Load Raw Dataset] --> B[Data Cleaning & Preprocessing]
     B --> C[Exploratory Data Analysis]
     C --> D[Feature Engineering]
     D --> E[Train Random Forest Model]
-    E --> F[Evaluate Model Accuracy]
+    E --> F[Evaluate Model Performance]
 ```
 
 ---
 
 ## 🧩 Feature Engineering
 
-| Feature            | Purpose |
-|--------------------|---------|
-| `average`          | Combined academic score (Math + Reading + Writing) |
-| `performance_level`| Converts average score into classes (Low/Medium/High) |
+Two new engineered features improve model interpretability and performance:
+
+| Feature Name        | Description |
+|--------------------|-------------|
+| `average`          | Mean of Math + Reading + Writing scores |
+| `performance_level`| Categorizes average score into Low / Medium / High |
 
 ```python
 df["average"] = (df.math_score + df.reading_score + df.writing_score) / 3
+df["average"] = df["average"].round(2)
 ```
 
 ---
 
-## 🔍 Key Insights
+## 🔍 Key Insights from EDA
 
-- Students who completed **test preparation** scored higher  
-- Higher **parental education** → Better performance  
-- **Reading & Writing** scores are strongly correlated  
-- Students with **standard lunch** performed better  
+✔ Students completing **test preparation** perform significantly better  
+✔ Higher **parental education level** → Higher academic achievement  
+✔ **Reading & Writing** scores show strong linear correlation  
+✔ Students with **standard lunch** outperform those with free/reduced lunch  
+
+---
+
+## 📈 Correlation Flow
+
+```mermaid
+graph LR
+Math[Math Score] --> Reading[Reading Score]
+Reading --> Writing[Writing Score]
+Math --> Writing[Writing Score]
+```
 
 ---
 
 ## 🤖 Machine Learning Model
 
-| Component  | Details |
-|------------|---------|
-| Algorithm  | RandomForestClassifier |
-| Target     | performance_level |
-| Accuracy   | **~95%** |
+| Component    | Details |
+|--------------|---------|
+| Algorithm    | RandomForestClassifier |
+| Target       | `performance_level` |
+| Accuracy     | **~95%** |
+| Encoding     | One-hot encoding for categorical features |
 
 ```python
+from sklearn.ensemble import RandomForestClassifier
+
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 ```
 
+The model achieves **strong performance** across all classes (Low, Medium, High) with balanced precision/recall.
+
 ---
 
 ## 🔧 Tech Stack
 
-- Python  
-- Pandas, NumPy  
-- Matplotlib, Seaborn  
-- Scikit-Learn  
-- Jupyter Notebook / Google Colab
+- **Programming:** Python  
+- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn  
+- **Environment:** Jupyter Notebook / Google Colab  
+- **Model:** Random Forest Classifier  
 
 ---
 
 ## ▶️ Run This Project Locally
 
-Clone the repo:
+Clone the repository:
 
 ```bash
 git clone https://github.com/sujal128/student-performance-analysis.git
@@ -101,7 +129,7 @@ Install dependencies:
 pip install pandas numpy seaborn matplotlib scikit-learn
 ```
 
-Run the notebook:
+Launch the notebook:
 
 ```bash
 jupyter notebook
@@ -111,9 +139,9 @@ Open: **Student Performance Data Analysis.ipynb**
 
 ---
 
-## 📈 Outputs Saved Automatically
+## 📁 Visual Outputs
 
-All plots are saved in:
+All visualizations are automatically exported to:
 
 ```
 /visuals/
@@ -121,10 +149,10 @@ All plots are saved in:
 
 Includes:
 
-- Score distribution  
-- Parental education boxplot  
+- Average score distribution  
+- Gender-wise performance analysis  
+- Parental education vs. scores  
 - Correlation heatmap  
-- Gender-wise averages  
 - Confusion matrix  
 - Feature importance chart  
 
@@ -132,15 +160,17 @@ Includes:
 
 ## ✅ Conclusion
 
-This project shows:
+This project showcases:
 
-- How performance is influenced by **parental education**, **lunch type**, and **test preparation**
-- Full Data Science pipeline: EDA → Feature Engineering → Modeling
-- ML model predicts student performance categories with **~95% accuracy**
+- How student performance correlates with **parental education**, **lunch type**, and **test preparation**
+- A fully executed **Data Science pipeline** from raw data to ML modeling
+- A **95% accurate** Random Forest classifier predicting performance levels
 
-> *“Data transforms assumptions into insights — and insights into decisions.”*
+> *Data transforms assumptions into insights — and insights into decisions.*
 
 ---
 
-### GitHub: https://github.com/sujal128  
-### LinkedIn: https://www.linkedin.com/in/sujal-singh-40657728b/
+<p align="center">
+  <a href="https://github.com/sujal128"><img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://www.linkedin.com/in/sujal-singh-40657728b/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+</p>
